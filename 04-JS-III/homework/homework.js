@@ -210,7 +210,22 @@ function mesesDelAño(array) {
   //Dado un array que contiene algunos meses del año desordenados, recorrer el array buscando los meses de 
   // "Enero", "Marzo" y "Noviembre", guardarlo en nuevo array y retornarlo.
   //Si alguno de los meses no está, devolver: "No se encontraron los meses pedidos"
-  // Tu código:
+  // Tu código:¨
+  var narray=[];
+  for (let f=0; f<array.length;f++){
+    switch (array[f]){
+      case "Enero":
+        narray.push("Enero");
+        break;
+      case "Marzo":
+        narray.push("Marzo");
+        break;
+      case "Noviembre":
+        narray.push("Noviembre");
+        break;
+    }
+  }
+  return narray;
 }
 
 
@@ -218,6 +233,13 @@ function mayorACien(array) {
   //La función recibe un array con enteros entre 0 y 200. Recorrer el array y guardar en un nuevo array sólo los
   //valores mayores a 100 (no incluye el 100). Finalmente devolver el nuevo array.
   // Tu código:
+  let narray=[];
+  for (let f=0; f<array.length;f++){
+    if (array[f]>100){
+      narray.push(array[f])
+    }
+  }
+  return narray;
 }
 
 
@@ -229,6 +251,14 @@ function breakStatement(numero) {
   //devolver: "Se interrumpió la ejecución"
   //Pista: usá el statement 'break'
   // Tu código:
+  let narray=[];
+  let conteo=0;
+  do {
+    numero+=2;
+    narray.push(numero);
+    conteo++;
+  } while (conteo<10 && numero!=conteo)
+  return narray;
 }
 
 
