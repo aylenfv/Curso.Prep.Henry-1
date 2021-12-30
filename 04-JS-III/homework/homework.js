@@ -141,11 +141,10 @@ function multiplicarArgumentos() {
   
   if (arguments.length===0){
     return 0;
-  } else {
-    var result=arguments[0]:
-    for (let f=1; f<arguments.length;f++){
-      result*=arguments[f]
-    }
+  }
+  var result=arguments[0]:
+  for (let f=1; f<arguments.length;f++){
+    result*=arguments[f]
     return result;
   }
 }
