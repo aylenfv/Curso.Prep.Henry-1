@@ -90,7 +90,7 @@ function estaEnRango(numero) {
   // Devuelve "true" si "numero" es menor que 50 y mayor que 20
   // De lo contrario, devuelve "false"
   // Tu código:
-  if (50>numero>20){
+  if (50>numero && numero>20){
     return true;
   }
   return false;
@@ -136,7 +136,7 @@ function operadoresLogicos(num1, num2, num3) {
     return "Error"
   //Si num1 es mayor a num2 y a num3 y además es positivo, retornar ---> "Número 1 es mayor y positivo"
   } else if (num1>num2 && num1>num3){
-    return "Número "+num1+" es mayor y positivo";
+    return "Número 1 es mayor y positivo";
   //Si num3 es más grande que num1 y num2, aumentar su valor en 1 y retornar el nuevo valor.
   } else if (num3>num2 && num3>num1){
     num3++
@@ -181,7 +181,7 @@ function tablaDelSeis(){
   //La función devuelve un array con los resultados de la tabla de multiplicar del 6 en orden creciente.
   //Escribe tu código aquí   
   var arr=[];
-  for (let i=0; i<=60; i++){
+  for (let i=0; i<=10; i++){
     arr.push(i*6)
   }
   return arr;
