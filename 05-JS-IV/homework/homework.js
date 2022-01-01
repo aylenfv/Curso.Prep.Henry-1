@@ -6,11 +6,13 @@ function crearGato(nombre, edad) {
   // Agrega un método (funcion) llamado "meow" que devuelva el string "Meow!"
   // Devuelve el objeto
   // Tu código:
-  var objeto={"nombre":nombre};
-  objeto["Edad"]=edad;
-  function meow() {
-    return "Meow!"
-  }
+  var objeto={
+    "nombre":nombre,
+    "edad":edad,
+    "meow": function () {
+      return "Meow!"
+      }
+    }
   return objeto
 }
 
@@ -21,6 +23,7 @@ function agregarPropiedad(objeto, property) {
   // NOTA: El nombre de la propiedad no es "propiedad", el nombre es el valor del argumento llamado "property" (una cadena/string)
   // Tu código:
   objeto[property]=null;
+  return objeto;
 }
 
 function invocarMetodo(objeto, metodo) {
@@ -28,14 +31,14 @@ function invocarMetodo(objeto, metodo) {
   // Invoca ese método
   // Nada necesita ser devuelto ("returned")
   // Tu código:
-  metodo(objeto);
+  objeto[metodo]();
 }
 
 function multiplicarNumeroDesconocidoPorCinco(objetoMisterioso) {
   // "objetoMisterioso" tiene una propiedad llamada "numeroMisterioso"
   // Multiplica el numeroMisterioso por 5 y devuelve el producto
   // Tu código:
-  return objetoMisterioso*5;
+  return objetoMisterioso.numeroMisterioso*5;
 }
 
 function eliminarPropiedad(objeto, unaPropiedad) {
@@ -43,25 +46,26 @@ function eliminarPropiedad(objeto, unaPropiedad) {
   // tip: tenes que usar bracket notation
   // Devuelve el objeto
   // Tu código:
-  delete objeto.unaPropiedad;
+  delete objeto[unaPropiedad];
+  return objeto;
 }
 
 function nuevoUsuario(nombre, email, password) {
   // Crea un nuevo objeto con las propiedades coincidiendo con los argumentos que se pasan a la función
   // Devuelve el objeto
   // Tu código:
-let obj={};
-obj["nombre"]=nombre;
-obj["email"]=email;
-obj["passowrd"]=password;
-return obj
+  let obj={};
+  obj.nombre=nombre;
+  obj.email=email;
+  obj.password=password;
+  return obj
 }
 
 function tieneEmail(usuario) {
   // Devuelve "true" si el usuario tiene un valor definido para la propiedad "email"
   // De lo contratio, devuelve "false"
   // Tu código:
-   return usuario.hasOwnProperty("email");
+  return usuario.email!=null && usuario.email!=undefined;
 }
 
 
@@ -86,7 +90,7 @@ function actualizarPassword(usuario, nuevaPassword) {
   // Reemplaza la contraseña existente en el objeto "usuario" con el valor de "nuevagPassword"
   // Devuelve el objeto
   // Tu código:
-  usario["password"]=nuevaPassword;
+  usuario["password"]=nuevaPassword;
   return usuario
 }
 
@@ -135,9 +139,10 @@ function agregarMetodoCalculoDescuento(producto) {
   // producto.porcentajeDeDescuento -> 0.2 (o simplemente ".2")
   // producto.calcularPrecioDescuento() -> 20 - (20 * 0.2)
   // Tu código:
-  function calcularPrecioDescuento(producto){
+  producto.calcularPrecioDescuento=function(){
     return producto.precio-producto.precio*producto.porcentajeDeDescuento
-  }
+    }
+  return producto;
 }
 
 // No modificar nada debajo de esta línea
